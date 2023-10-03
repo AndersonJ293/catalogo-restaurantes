@@ -25,9 +25,10 @@ function updateList() {
 
     catalog.appendChild(warning);
   }
+  setTimeout(() => {
+    console.log(2);
+    updateList();
+  }, 5000);
 }
-setTimeout(() => {
-  updateList();
-}, 5000);
 
 updateList();

@@ -78,6 +78,7 @@ class CatalogCard extends HTMLElement {
       -webkit-user-drag: none;
       padding: 0;
       width: 80%;
+      height: 150px
       border: 1px solid black;
       object-fit: fill;
       border-radius: 10px;

@@ -72,6 +72,39 @@ form.addEventListener("submit", (event) => {
     return ((Math.random() * maxId) | 0).toString(36);
   }
 
+  function displayError(form) {
+    console.log(form);
+    if (form) {
+      document.querySelector("#error").innerText =
+        "Preencha os campos em vermelho";
+    } else {
+      document.querySelector("#error").innerText = "";
+    }
+  }
+
+  function validateForm() {
+    let hasEmpty = false;
+    document.querySelector("#image").style.border = "none";
+    document.querySelector("#name").style.border = "none";
+    document.querySelector(".checkboxes").style.border = "none";
+    if (!newItem.name) {
+      document.querySelector("#name").style.border = "1px solid red";
+      hasEmpty = true;
+    }
+
+    if (!newItem.image) {
+      document.querySelector("#image").style.border = "1px solid red";
+      hasEmpty = true;
+    }
+
+    if (checkedBoxes().length === 0) {
+      document.querySelector(".checkboxes").style.border = "1px solid red";
+      hasEmpty = true;
+    }
+
+    return hasEmpty;
+  }
+
   const newItem = {
     id: generateRandomId(),
     name: document.querySelector("#name").value,
@@ -80,6 +113,11 @@ form.addEventListener("submit", (event) => {
     review: document.querySelector("#review").value,
     price: document.querySelector("input[type=radio]:checked").id,
   };
+
+  displayError(validateForm());
+  if (validateForm()) {
+    return;
+  }
 
   if (id) {
     newItem.id = id;
@@ -90,6 +128,6 @@ form.addEventListener("submit", (event) => {
   localStorage.setItem("catalogItems", JSON.stringify(catalogItems));
 
   setTimeout(() => {
-    window.location = "/";
+    window.location = "index.html";
   }, 1000);
 });
