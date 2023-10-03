@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crud Restaurantes - Cadastro</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/cadastro.css" />
+    <script type="module" src="/assets/js/components/navbar.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <nav-bar></nav-bar>
+      <div class="content">
+        <section class="form">
+          <h3 id="title">Cadastrar Restaurante</h3>
+
+          <form method="post" id="form">
+            <div class="inputWrapper">
+              <label for="name">Nome</label>
+              <input type="text" id="name" name="name" class="inputText" />
+            </div>
+            <div class="inputWrapper">
+              <label for="image">Imagem</label>
+              <input type="text" id="image" name="image" class="inputText" />
+            </div>
+            <div class="inputWrapper">
+              <label>Observações</label>
+              <div class="checkboxes">
+                <div>
+                  <input type="checkbox" id="food" name="food" />
+                  <label for="food">Boa Comida</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="ambient" name="ambient" />
+                  <label for="ambient">Bom Ambiente</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="service" name="service" />
+                  <label for="service">Bom Atendimento</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="decoration" name="decoration" />
+                  <label for="decoration">Decoração Aconchegante</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="variety" name="variety" />
+                  <label for="variety">Variedade de Cardápio</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="drinks" name="drinks" />
+                  <label for="drinks">Opções de Bebidas</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="music" name="music" />
+                  <label for="music">Música ao Vivo</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="childrenMenu"
+                    name="childrenMenu"
+                  />
+                  <label for="childrenMenu">Menu Infantil</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="location" name="location" />
+                  <label for="location">Boa Localização</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="accessibility"
+                    name="accessibility"
+                  />
+                  <label for="accessibility">Acessibilidade</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="inputWrapper">
+              <label for="review">Nota - <span id="reviewValue">0</span></label>
+              <input
+                type="range"
+                max="5"
+                min="0"
+                value="0"
+                id="review"
+                name="review"
+              />
+            </div>
+            <div class="inputWrapper">
+              <label for="price">Preço</label>
+              <div class="radioOptions">
+                <span>$</span>
+                <input type="radio" name="price" id="$" checked />
+                <span>$$</span> <input type="radio" name="price" id="$$" />
+                <span>$$$</span> <input type="radio" name="price" id="$$$" />
+              </div>
+            </div>
+            <input id="button" type="submit" value="Cadastrar" />
+          </form>
+        </section>
+
+        <section class="preview"></section>
+      </div>
+    </main>
+    <script src="/assets/js/register.js"></script>
+  </body>
+</html>
