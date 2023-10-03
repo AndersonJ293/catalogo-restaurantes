@@ -12,7 +12,7 @@ class Navbar extends HTMLElement {
     const componentRoot = document.createElement("nav");
 
     const title = document.createElement("a");
-    title.href = "/";
+    title.href = "index.html";
     title.innerText = "CRUD";
     componentRoot.appendChild(title);
 
